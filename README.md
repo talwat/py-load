@@ -1,5 +1,7 @@
 # PY-LOAD
 
+**A super simple, easy to use module for python.**
+
 ## Info
 
 Py-load is a simple python package that allows you to very easily add loading bars to your CLI app.

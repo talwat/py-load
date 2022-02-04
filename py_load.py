@@ -51,9 +51,13 @@ class LoadingBar:
         The length (in characters) of the loading bar.
         """
     
-    def display(self):
+    def display(self, autoPrint = True):
         """
         Display the Loading Bar.
+
+        Disable `autoPrint` to have the method only return the string instead of printing it using the `print()` method. 
+
+        Make sure to use the `print()` function right after calling this to reposition the cursor and avoid some issues.
         """
         percent = round((self.progress / self.total) * self.barLength)
 
@@ -67,4 +71,6 @@ class LoadingBar:
         
         toPrint += self.borderChars[1]
 
-        print(toPrint, end="\r")
+        if autoPrint:
+            print(toPrint, end="\r")
+        return toPrint
