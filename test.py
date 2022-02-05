@@ -2,10 +2,16 @@
 
 from time import sleep
 import py_load
+from py_load import LoadingBar
 
-myLoadingBar = py_load.LoadingBar(45, barLength=50)
+myLoadingBar = LoadingBar(45, barLength=50)
 myLoadingBar.progress = 0
-print("foo")
+myLoadingBar.borderChars = ["[", "]"]
+myLoadingBar.progressChar = " "
+myLoadingBar.borderCharsColors = [LoadingBar.Colors.WHITEBG, LoadingBar.Colors.BLACK]
+myLoadingBar.progressCharColors = [LoadingBar.Colors.GREENBG, LoadingBar.Colors.BLACK]
+myLoadingBar.emptyCharColors = [LoadingBar.Colors.REDBG]
+
 for i in range(6):
     sleep(0.5)
     myLoadingBar.progress += 10
