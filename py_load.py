@@ -58,14 +58,14 @@ class LoadingBar:
         WHITEBG2  = '\33[107m'
 
     def __init__(self, 
-                 total: int, 
-                 borderChars = ["[", "]"], 
-                 progressChar: str = "#", 
-                 emptyChar: str = " ", 
-                 borderCharsColors = [Colors.END], 
-                 progressCharColors = [Colors.END], 
-                 emptyCharColors = [Colors.END],  
-                 barLength = 50):
+                 total:              int, 
+                 borderChars:        list = ["[", "]"], 
+                 progressChar:       str  = "#", 
+                 emptyChar:          str  = " ", 
+                 borderCharsColors:  list = [Colors.END], 
+                 progressCharColors: list = [Colors.END], 
+                 emptyCharColors:    list = [Colors.END],  
+                 barLength:          int  = 50):
         """
         Initialize the Loading Bar.
 
@@ -159,49 +159,40 @@ class LoadingBar:
         Make sure to use the `print()` function right after calling this to reposition the cursor and avoid some issues.
         """
 
-        # Sorry for anyone who has to look at this code, hopefully will be cleaned up soon.
-        # TODO: Make code cleaner and more organized.
+        # TODO: Make code even cleaner and more organized.
 
-        percent = round((self.progress / self.total) * self.barLength)
+        def merge(input):
+            return "".join(input)
+
+        PERCENT = round((self.progress / self.total) * self.barLength)
         
         END = LoadingBar.Colors.END
+        PROGRESSCOLORS = merge(self.progressCharColors)
+        BORDER = END + merge(self.borderCharsColors)
+        BORDER1 = BORDER + self.borderChars[0] + END
+        BORDER2 = BORDER + self.borderChars[1] + END
 
-        border1 = (
-            END +
-            "".join(self.borderCharsColors) +
-            self.borderChars[0] +
-            END
-        )
-
-        border2 = (
-            END +
-            "".join(self.borderCharsColors) +
-            self.borderChars[1] +
-            END
-        )
-
-        reduct = len(
-            END +
-            "".join(self.borderCharsColors) +
-            END +
-            "".join(self.progressCharColors)
-        )
+        REDUCT = len( BORDER + END + PROGRESSCOLORS)
 
         toPrint = ""
-        toPrint += border1
-        toPrint += "".join(self.progressCharColors) 
 
-        for i in range(percent):
-            length = len(toPrint) - reduct
-            if length < (self.barLength + len(self.borderChars[0])):
+        toPrint += BORDER1
+        toPrint += PROGRESSCOLORS 
+
+        for i in range(PERCENT):
+            length = len(toPrint) - REDUCT
+            limit = self.barLength + len(self.borderChars[0])
+
+            if length < limit:
                 toPrint += self.progressChar
 
-        toPrint += (END + "".join(self.emptyCharColors))
-
-        for i in range(self.barLength - percent):
+        toPrint += (END + merge(self.emptyCharColors))
+        
+        limit = self.barLength - PERCENT
+        for i in range(limit):
             toPrint += self.emptyChar
         
-        toPrint += border2
+        toPrint += BORDER2
 
         if autoPrint:
             print(toPrint, end="\r")
