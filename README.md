@@ -24,9 +24,7 @@ pip may also be an option in the future, however for now you have to download th
 
 ## Usage
 
-See [USAGE.md](USAGE.md) for info.
-
-In the future documentation will be found in Github's Wiki feature.
+See the [Wiki](https://github.com/talwat/py-load/wiki) for info on usage.
 
 ## Credits
 
