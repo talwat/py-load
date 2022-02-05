@@ -18,9 +18,17 @@ Py-load only needs [Python](https://python.org) 3.0 or higher, as it uses Python
 
 ## Installing
 
+### Installing from source
+
 Download `py_load.py` and put it in your projects source folder, and then your done!
 
-pip may also be an option in the future, however for now you have to download the python file manually.
+This will give you the newest features, but it may be unstable.
+
+### Installing with Pip
+
+You can also use pip to install it by doing `pip install py-load-lib`
+
+This will usually be fairly stable and robust, however it is updated quite slowly.
 
 ## Usage
 
