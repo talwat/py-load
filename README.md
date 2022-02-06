@@ -1,6 +1,12 @@
-# PY-LOAD
-
-**A super simple, easy to use module for python.**
+<h1 align="center">
+    <img src="svgs/py-load-logo.svg" width="30%">
+</h1>
+<h1 align="center">
+    Py-Load
+</h1>
+<h2 align="center">
+    A super simple, easy to use module for python.
+</h2>
 
 ## Info
 
