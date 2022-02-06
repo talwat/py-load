@@ -64,12 +64,17 @@ class LoadingBar:
                  emptyChar:          str  = " ", 
                  borderCharsColors:  list = [Colors.END], 
                  progressCharColors: list = [Colors.END], 
-                 emptyCharColors:    list = [Colors.END],  
+                 emptyCharColors:    list = [Colors.END],
+                 includePercent:     bool = False, 
+                 percentChar:        str  = "%", 
+                 percentLocation:    bool = True,
                  barLength:          int  = 50):
         """
         Initialize the Loading Bar.
 
-        Customize the way it looks by specifying the `borderChars`, `progressChar`, and `emptyChar` arguements.
+        Customize the characters specifying the `borderChars`, `progressChar`, and `emptyChar` arguements.
+
+        Customize the colors specifying the `borderCharsColors`, `progressCharColors`, and `emptyCharColors` arguements.
 
         You can do this by doing `<loadingBarName>.<arguementName> = <value>`. 
         This can also be specified when initializing.
@@ -143,6 +148,57 @@ class LoadingBar:
 
         `myLoadingBar.emptyCharColors = [py_load.LoadingBar.Colors.ORANGE, py_load.LoadingBar.Colors.REDBG]`
         """
+        self.includePercent = includePercent 
+        """
+        Default: False
+
+        Decides wether the loading bar will be displayed with a percent on one of the sides.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.includePercent = True
+        myLoadingBar.display()
+        ```
+        Output: `[##########] 100%`
+        """
+
+        self.percentChar = percentChar
+        """
+        Default: "%"
+
+        The character next to the percentage.
+
+        Does nothing if `includePercent` isn't set to true.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.includePercent = True
+        myLoadingBar.percentChar = "$"
+        myLoadingBar.display()
+        ```
+        Output: `[##########] 100$`
+        """
+        self.percentLocation = percentLocation
+        """
+        Default: True
+
+        Sets which side the precent and precent character will appear.
+
+        True to have the percent on the right, and false to have it on the left.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.includePercent = True
+        myLoadingBar.display()
+        ```
+        Output: `[##########] 100%`
+        """
         self.barLength = barLength
         """
         Default: 50
@@ -154,7 +210,11 @@ class LoadingBar:
         """
         Display the Loading Bar.
 
-        Disable `autoPrint` to have the method only return the string instead of printing it using the `print()` method. 
+        Disable `autoPrint` to have the method only return the string instead of printing it using the `print()` method.
+
+        Enable `inlcudePercent` to enable displaying the percent with the loading bar.
+
+        Make `percentLocation` true to have the percent on the right, and false to have it on the left.
 
         Make sure to use the `print()` function right after calling this to reposition the cursor and avoid some issues.
         """
@@ -164,7 +224,10 @@ class LoadingBar:
         def merge(input):
             return "".join(input)
 
-        PERCENT = round((self.progress / self.total) * self.barLength)
+        DISPLAYPERCENT = round((self.progress / self.total) * self.barLength)
+        PERCENT = round((self.progress / self.total) * 100)
+        if PERCENT > 100:
+            PERCENT = 100
         
         END = LoadingBar.Colors.END
         PROGRESSCOLORS = merge(self.progressCharColors)
@@ -179,7 +242,7 @@ class LoadingBar:
         toPrint += BORDER1
         toPrint += PROGRESSCOLORS 
 
-        for i in range(PERCENT):
+        for i in range(DISPLAYPERCENT):
             length = len(toPrint) - REDUCT
             limit = self.barLength + len(self.borderChars[0])
 
@@ -188,11 +251,16 @@ class LoadingBar:
 
         toPrint += (END + merge(self.emptyCharColors))
         
-        limit = self.barLength - PERCENT
+        limit = self.barLength - DISPLAYPERCENT
         for i in range(limit):
             toPrint += self.emptyChar
         
         toPrint += BORDER2
+        if self.includePercent:
+            if self.percentLocation:
+                toPrint += f" {PERCENT}{self.percentChar}"
+            else:
+                toPrint = f"{PERCENT}{self.percentChar} {toPrint}"
 
         if autoPrint:
             print(toPrint, end="\r")

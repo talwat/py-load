@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='py-load-lib',
-    description="A super simple, easy to use module for python.",
+    description="A super simple and easy to use loading bar module for python.",
     version='0.3',
     license='MIT',
     author="Talwat",

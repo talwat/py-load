@@ -5,7 +5,7 @@
     Py-Load
 </h1>
 <h2 align="center">
-    A super simple, easy to use module for python.
+    A super simple and easy to use loading bar module for python.
 </h2>
 
 ## Info

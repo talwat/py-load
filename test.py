@@ -11,6 +11,7 @@ myLoadingBar.emptyChar = " "
 myLoadingBar.borderCharsColors = [LoadingBar.Colors.WHITE]
 myLoadingBar.progressCharColors = [LoadingBar.Colors.GREEN]
 myLoadingBar.emptyCharColors = [LoadingBar.Colors.RED]
+myLoadingBar.includePercent = True
 
 print("foo")
 for i in range(6):
