@@ -1,6 +1,3 @@
-from typing import List
-
-
 class LoadingBar:
     """
     Py-Load main class.
