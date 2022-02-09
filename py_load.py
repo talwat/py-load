@@ -1,6 +1,8 @@
 class LoadingBar:
     """
     Py-Load main class.
+
+    Code available on Github.
     """
 
     class Colors:
