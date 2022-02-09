@@ -20,7 +20,10 @@ It uses modern python features to make the code organized and maintainable.
 
 Py-load only needs [Python](https://python.org) 3.0 or higher, as it uses Python 3 features.
 
-*(Note: Only tested with python 3.9 and 3.10, should work on older versions)*
+**Tested Python Versions**
+* 3.10
+* 3.9
+* 3.8
 
 ## Installing
 

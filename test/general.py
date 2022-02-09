@@ -15,7 +15,7 @@ myLoadingBar.includePercent = True
 
 print("foo")
 for i in range(6):
-    sleep(0.5)
-    myLoadingBar.progress += 10
     myLoadingBar.display()
+    myLoadingBar.progress += 10
+    sleep(0.5)
 print("\nbar")

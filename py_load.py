@@ -72,11 +72,11 @@ class LoadingBar:
         """
         Initialize the Loading Bar.
 
-        Customize the characters specifying the `borderChars`, `progressChar`, and `emptyChar` arguements.
+        Customize the characters specifying the `borderChars`, `progressChar`, and `emptyChar` arguments.
 
-        Customize the colors specifying the `borderCharsColors`, `progressCharColors`, and `emptyCharColors` arguements.
+        Customize the colors specifying the `borderCharsColors`, `progressCharColors`, and `emptyCharColors` arguments.
 
-        You can do this by doing `<loadingBarName>.<arguementName> = <value>`. 
+        You can do this by doing `<loadingBarName>.<argumentsName> = <value>`. 
         This can also be specified when initializing.
         """
 
@@ -152,7 +152,7 @@ class LoadingBar:
         """
         Default: False
 
-        Decides wether the loading bar will be displayed with a percent on one of the sides.
+        Decides whether the loading bar will be displayed with a percent on one of the sides.
 
         For example:
 
@@ -212,7 +212,7 @@ class LoadingBar:
 
         Disable `autoPrint` to have the method only return the string instead of printing it using the `print()` method.
 
-        Enable `inlcudePercent` to enable displaying the percent with the loading bar.
+        Enable `includePercent` to enable displaying the percent with the loading bar.
 
         Make `percentLocation` true to have the percent on the right, and false to have it on the left.
 
@@ -265,3 +265,31 @@ class LoadingBar:
         if autoPrint:
             print(toPrint, end="\r")
         return toPrint
+
+class Iterate:
+    """
+    EXPERIMENTAL
+
+    Notice: This isn't documented yet.
+    """
+
+    def __init__(self, iterable, bar: LoadingBar = None):
+        self.iterable = iterable
+        self.total = len(self.iterable) - 1
+        if bar != None: 
+            self.bar = bar
+            self.bar.total = self.total
+            return
+        self.bar = LoadingBar(self.total)
+    
+    def __iter__(self):
+        self.iteration = 0
+        return self
+
+    def __next__(self):
+        if self.iteration <= self.total:
+            self.bar.display()
+            self.iteration += 1
+            self.bar.progress = self.iteration
+        else:
+            raise StopIteration
