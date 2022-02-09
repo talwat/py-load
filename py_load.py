@@ -1,3 +1,6 @@
+from typing import List
+
+
 class LoadingBar:
     """
     Py-Load main class.
@@ -268,14 +271,30 @@ class LoadingBar:
             print(toPrint, end="\r")
         return toPrint
 
-class Iterate:
+class SmartBar:
     """
     EXPERIMENTAL
 
-    Notice: This isn't documented yet.
+    Notice: This isn't documented very well yet.
     """
 
     def __init__(self, iterable, bar: LoadingBar = None):
+        """
+        EXPERIMENTAL
+
+        Super quickly and easily make a loading bar by using it in something like a `for` loop.
+        
+        Eg.
+        
+        ```
+        for i in SmartBar(range(6)):
+            doStuff()
+        ```
+        
+        And have a loading bar automatically appear.
+
+        However to specify what bar will appear you can also do `SmartBar(<iterable>, <loadingBar>)`
+        """
         self.iterable = iterable
         self.total = len(self.iterable) - 1
         if bar != None: 

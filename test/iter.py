@@ -12,6 +12,6 @@ myLoadingBar.emptyCharColors = [LoadingBar.Colors.RED]
 myLoadingBar.includePercent = True
 
 print("foo")
-for i in Iterate(range(6), myLoadingBar):
+for i in SmartBar(range(6), myLoadingBar):
     sleep(0.5)
 print("\nbar")
