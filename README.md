@@ -8,6 +8,9 @@
     A super simple and easy to use loading bar module for python.
 </h2>
 
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/context:python)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/alerts/)
+
 ## Info
 
 Py-load is a simple python package that allows you to very easily add loading bars to your CLI app.

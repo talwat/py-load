@@ -3,14 +3,20 @@
         "BEIGEBG",
         "BLACKBG",
         "BLUEBG",
+        "cimg",
+        "circleci",
+        "Dockerhub",
         "GREENBG",
         "GREYBG",
+        "Pipenv",
+        "Pipfile",
+        "pytest",
         "REDBG",
         "REDUCT",
+        "svgs",
+        "Talwat",
         "VIOLETBG",
         "WHITEBG",
-        "YELLOWBG",
-        "Talwat",
-        "svgs",
+        "YELLOWBG"
     ]
 }
