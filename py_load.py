@@ -5,6 +5,7 @@ class LoadingBar:
     Code available on Github.
     """
 
+    # Class with a list of all the different ANSI codes in order to select colors easily.
     class Colors:
         """
         Color Class.
@@ -83,9 +84,13 @@ class LoadingBar:
         """
 
         self.total = total
-        """The total/max value of the loading bar."""
+        """
+        The total/max value of the loading bar.
+        """
         self.progress = 0
-        """The progress value of the loading bar. Not a precentage."""
+        """
+        The progress value of the loading bar. Not a precentage.
+        """
         self.borderChars = borderChars
         """
         Default: "[", "]"
@@ -293,19 +298,19 @@ class SmartBar:
         However to specify what bar will appear you can also do `SmartBar(<iterable>, <loadingBar>)`
         """
         self.iterable = iterable
-        self.total = len(self.iterable) - 1
+        self.TOTAL = len(self.iterable) - 1
         if bar != None: 
             self.bar = bar
-            self.bar.total = self.total
+            self.bar.total = self.TOTAL
             return
-        self.bar = LoadingBar(self.total)
+        self.bar = LoadingBar(self.TOTAL)
     
     def __iter__(self):
         self.iteration = 0
         return self
 
     def __next__(self):
-        if self.iteration <= self.total:
+        if self.iteration <= self.TOTAL:
             self.bar.display()
             self.iteration += 1
             self.bar.progress = self.iteration
