@@ -37,6 +37,9 @@ jobs:
           name: Install Other Dependencies
           command: pip install pytest
       - run:
+          name: Get into proper directory
+          command: cd ../..
+      - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: pytest
