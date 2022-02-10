@@ -13,6 +13,9 @@
 [![License](https://img.shields.io/github/license/talwat/py-load)](https://img.shields.io/github/license/talwat/py-load)
 [![Code Size](https://img.shields.io/github/languages/code-size/talwat/py-load)](https://img.shields.io/github/languages/code-size/talwat/py-load)
 [![PyPi Version](https://img.shields.io/pypi/v/py-load-lib)](https://img.shields.io/pypi/v/py-load-lib)
+[![Commits](https://img.shields.io/github/commit-activity/m/talwat/py-load)](https://img.shields.io/github/commit-activity/m/talwat/py-load)
+[![Last Commit](https://img.shields.io/github/last-commit/talwat/py-load)](https://img.shields.io/github/last-commit/talwat/py-load)
+[![Stars](https://img.shields.io/github/stars/talwat/py-load)](https://img.shields.io/github/stars/talwat/py-load)
 
 ## Info
 
