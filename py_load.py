@@ -275,15 +275,11 @@ class LoadingBar:
 
 class SmartBar:
     """
-    EXPERIMENTAL
-
-    Notice: This isn't documented very well yet.
+    SmartBar class.
     """
 
     def __init__(self, iterable, bar: LoadingBar = None):
         """
-        EXPERIMENTAL
-
         Super quickly and easily make a loading bar by using it in something like a `for` loop.
         
         Eg.
@@ -296,6 +292,10 @@ class SmartBar:
         And have a loading bar automatically appear.
 
         However to specify what bar will appear you can also do `SmartBar(<iterable>, <loadingBar>)`
+
+        It doesn't just have to be `range()`, it can also be any iterable.
+
+        It may also have use outside of `for` loops, but it hasn't been tested yet.
         """
         self.iterable = iterable
         self.TOTAL = len(self.iterable) - 1
