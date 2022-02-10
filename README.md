@@ -10,6 +10,9 @@
 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/context:python)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/alerts/)
+[![License](https://img.shields.io/github/license/talwat/py-load)](https://img.shields.io/github/license/talwat/py-load)
+[![Code Size](https://img.shields.io/github/languages/code-size/talwat/py-load)](https://img.shields.io/github/languages/code-size/talwat/py-load)
+[![PyPi Version](https://img.shields.io/pypi/v/py-load-lib)](https://img.shields.io/pypi/v/py-load-lib)
 
 ## Info
 
@@ -18,6 +21,12 @@ Py-load is a simple python package that allows you to very easily add loading ba
 Py-load is very lightweight, and requires no other dependencies, and is also fairly customizable.
 
 It uses modern python features to make the code organized and maintainable.
+
+This whole repository is some what of a learning project. So I may goof up every now and then, since I am not very experienced with Github and all of its features.
+
+That's why you may see some strange commits every now and then. Sorry!
+
+*Note: I will do my best to keep the **code** itself clean and organized*
 
 ## Requirements
 
