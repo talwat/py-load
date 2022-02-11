@@ -8,6 +8,7 @@
         "Dockerhub",
         "GREENBG",
         "GREYBG",
+        "nums",
         "Pipenv",
         "Pipfile",
         "pytest",

@@ -16,49 +16,51 @@ class LoadingBar:
 
         If the name ends with `2`, it will use the darker variant of the color.
         """
-        END       = '\33[0m'
-        BOLD      = '\33[1m'
-        ITALIC    = '\33[3m'
-        URL       = '\33[4m'
-        BLINK     = '\33[5m'
-        BLINK2    = '\33[6m'
-        SELECTED  = '\33[7m'
+        END           = '\33[0m'
+        BOLD          = '\33[1m'
+        DIM           = '\33[2m'
+        ITALIC        = '\33[3m'
+        URL           = '\33[4m'
+        BLINK         = '\33[5m'
+        BLINK2        = '\33[6m'
+        SELECTED      = '\33[7m'
+        STRIKETHROUGH = '\33[9m'
 
-        BLACK    = '\33[30m'
-        RED      = '\33[31m'
-        GREEN    = '\33[32m'
-        YELLOW   = '\33[33m'
-        BLUE     = '\33[34m'
-        VIOLET   = '\33[35m'
-        BEIGE    = '\33[36m'
-        WHITE    = '\33[37m'
+        BLACK         = '\33[30m'
+        RED           = '\33[31m'
+        GREEN         = '\33[32m'
+        YELLOW        = '\33[33m'
+        BLUE          = '\33[34m'
+        VIOLET        = '\33[35m'
+        BEIGE         = '\33[36m'
+        WHITE         = '\33[37m'
 
-        BLACKBG   = '\33[40m'
-        REDBG     = '\33[41m'
-        GREENBG   = '\33[42m'
-        YELLOWBG  = '\33[43m'
-        BLUEBG    = '\33[44m'
-        VIOLETBG  = '\33[45m'
-        BEIGEBG   = '\33[46m'
-        WHITEBG   = '\33[47m'
+        BLACKBG       = '\33[40m'
+        REDBG         = '\33[41m'
+        GREENBG       = '\33[42m'
+        YELLOWBG      = '\33[43m'
+        BLUEBG        = '\33[44m'
+        VIOLETBG      = '\33[45m'
+        BEIGEBG       = '\33[46m'
+        WHITEBG       = '\33[47m'
 
-        GREY      = '\33[90m'
-        RED2      = '\33[91m'
-        GREEN2    = '\33[92m'
-        YELLOW2   = '\33[93m'
-        BLUE2     = '\33[94m'
-        VIOLET2   = '\33[95m'
-        BEIGE2    = '\33[96m'
-        WHITE2    = '\33[97m'
+        GREY          = '\33[90m'
+        RED2          = '\33[91m'
+        GREEN2        = '\33[92m'
+        YELLOW2       = '\33[93m'
+        BLUE2         = '\33[94m'
+        VIOLET2       = '\33[95m'
+        BEIGE2        = '\33[96m'
+        WHITE2        = '\33[97m'
 
-        GREYBG    = '\33[100m'
-        REDBG2    = '\33[101m'
-        GREENBG2  = '\33[102m'
-        YELLOWBG2 = '\33[103m'
-        BLUEBG2   = '\33[104m'
-        VIOLETBG2 = '\33[105m'
-        BEIGEBG2  = '\33[106m'
-        WHITEBG2  = '\33[107m'
+        GREYBG        = '\33[100m'
+        REDBG2        = '\33[101m'
+        GREENBG2      = '\33[102m'
+        YELLOWBG2     = '\33[103m'
+        BLUEBG2       = '\33[104m'
+        VIOLETBG2     = '\33[105m'
+        BEIGEBG2      = '\33[106m'
+        WHITEBG2      = '\33[107m'
 
     def __init__(self, 
                  total:              int, 
@@ -71,6 +73,9 @@ class LoadingBar:
                  includePercent:     bool = False, 
                  percentChar:        str  = "%", 
                  percentLocation:    bool = True,
+                 includeNums:        bool = False, 
+                 numsSeperatorChar:  str  = "/", 
+                 numsLocation:       bool = True,
                  barLength:          int  = 50):
         """
         Initialize the Loading Bar.
@@ -87,10 +92,12 @@ class LoadingBar:
         """
         The total/max value of the loading bar.
         """
+
         self.progress = 0
         """
         The progress value of the loading bar. Not a precentage.
         """
+
         self.borderChars = borderChars
         """
         Default: "[", "]"
@@ -107,18 +114,21 @@ class LoadingBar:
         ```
         Output: `{##########}`
         """
+
         self.progressChar = progressChar
         """
         Default: "#"
 
         The progress character / the fill character.
         """
+
         self.emptyChar = emptyChar
         """
         Default: " " (space)
 
         The empty character
         """
+
         self.borderCharsColors = borderCharsColors
         """
         Default: [Colors.END]
@@ -131,6 +141,7 @@ class LoadingBar:
 
         `myLoadingBar.borderCharsColors = [py_load.LoadingBar.Colors.GREEN, py_load.LoadingBar.Colors.WHITEBG]`
         """
+
         self.progressCharColors = progressCharColors
         """
         Default: [Colors.END]
@@ -143,6 +154,7 @@ class LoadingBar:
 
         `myLoadingBar.progressCharColors = [py_load.LoadingBar.Colors.GREEN, py_load.LoadingBar.Colors.GREENBG]`
         """
+
         self.emptyCharColors = emptyCharColors
         """
         Default: [Colors.END]
@@ -155,7 +167,9 @@ class LoadingBar:
 
         `myLoadingBar.emptyCharColors = [py_load.LoadingBar.Colors.ORANGE, py_load.LoadingBar.Colors.REDBG]`
         """
+
         self.includePercent = includePercent 
+        
         """
         Default: False
 
@@ -189,6 +203,7 @@ class LoadingBar:
         ```
         Output: `[##########] 100$`
         """
+
         self.percentLocation = percentLocation
         """
         Default: True
@@ -206,6 +221,28 @@ class LoadingBar:
         ```
         Output: `[##########] 100%`
         """
+
+        self.includeNums = includeNums
+        """
+        EXPERIMENTAL
+
+        Default: False
+        """
+        
+        self.numsSeperatorChar = numsSeperatorChar
+        """
+        EXPERIMENTAL
+
+        Default: "/"
+        """
+
+        self.numsLocation = numsLocation
+        """
+        EXPERIMENTAL
+
+        Default: True
+        """
+
         self.barLength = barLength
         """
         Default: 50
@@ -265,12 +302,19 @@ class LoadingBar:
         toPrint += BORDER2
         if self.includePercent:
             if self.percentLocation:
-                toPrint += f" {PERCENT}{self.percentChar}"
+                toPrint = f"{toPrint} {PERCENT}{self.percentChar}"
             else:
                 toPrint = f"{PERCENT}{self.percentChar} {toPrint}"
-
+        
+        if self.includeNums:
+            NUMS = str(self.progress) + self.numsSeperatorChar + str(self.total)
+            if self.numsLocation:
+                toPrint = f"{toPrint} {NUMS}"
+            else:
+                toPrint = f"{NUMS} {toPrint}"
         if autoPrint:
             print(toPrint, end="\r")
+
         return toPrint
 
 class SmartBar:
@@ -315,4 +359,5 @@ class SmartBar:
             self.iteration += 1
             self.bar.progress = self.iteration
         else:
+            print()
             raise StopIteration
