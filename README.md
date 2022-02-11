@@ -25,7 +25,8 @@ Py-load is very lightweight, and requires no other dependencies, and is also fai
 
 It uses modern python features to make the code organized and maintainable.
 
-This whole repository is some what of a learning project. So I may goof up every now and then, since I am not very experienced with Github and all of its features.
+This whole repository is some what of a learning project.
+So I may goof up every now and then since I am not very experienced with Github and all of its features.
 
 That's why you may see some strange commits every now and then. Sorry!
 
@@ -35,7 +36,8 @@ That's why you may see some strange commits every now and then. Sorry!
 
 Py-load only needs [Python](https://python.org) 3.0 or higher, as it uses Python 3 features.
 
-**Tested Python Versions**
+### Tested Python Versions
+
 * 3.10
 * 3.9
 * 3.8

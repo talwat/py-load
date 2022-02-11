@@ -1,0 +1,9 @@
+{
+    "default": true,
+    "MD033": {
+      "allowed_elements": [ "h1", "h2", "img"]
+    },
+    "MD013": {
+      "line_length": 100
+    }
+}
