@@ -1,22 +1,26 @@
-from time import sleep
-from py_load import *
+# TESTING SCRIPT
 
-def main():
+from time import sleep
+from py_load import LoadingBar
+
+def test_main():
     myLoadingBar = LoadingBar(45, barLength=50)
     myLoadingBar.progress = 0
     myLoadingBar.borderChars = ["[", "]"]
     myLoadingBar.progressChar = "#"
     myLoadingBar.emptyChar = " "
     myLoadingBar.borderCharsColors = [LoadingBar.Colors.WHITE]
-    myLoadingBar.progressCharColors = [LoadingBar.Colors.BLUE]
+    myLoadingBar.progressCharColors = [LoadingBar.Colors.GREEN]
     myLoadingBar.emptyCharColors = [LoadingBar.Colors.RED]
     myLoadingBar.includePercent = True
     myLoadingBar.includeNums = True
 
     print("foo")
-    for i in SmartBar(range(6), myLoadingBar):
+    for i in range(6):
+        myLoadingBar.display()
+        myLoadingBar.progress += 10
         sleep(0.5)
-    print("bar")
+    print("\nbar")
+    assert myLoadingBar
 
-if __name__ == '__main__':
-    main()
+test_main()
