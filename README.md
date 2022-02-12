@@ -10,6 +10,7 @@
 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/context:python)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/alerts/)
+[![Build](https://img.shields.io/github/workflow/status/talwat/py-load/Python%20application)](https://img.shields.io/github/workflow/status/talwat/py-load/Python%20application)
 [![License](https://img.shields.io/github/license/talwat/py-load)](https://img.shields.io/github/license/talwat/py-load)
 [![Code Size](https://img.shields.io/github/languages/code-size/talwat/py-load)](https://img.shields.io/github/languages/code-size/talwat/py-load)
 [![PyPi Version](https://img.shields.io/pypi/v/py-load-lib)](https://img.shields.io/pypi/v/py-load-lib)
