@@ -19,8 +19,7 @@ def test_main():
     for i in range(6):
         myLoadingBar.display()
         myLoadingBar.progress += 10
-        sleep(0.5)
+        sleep(0.1) # Here instead you would do stuff
     print("\nbar")
-    assert myLoadingBar
 
 test_main()

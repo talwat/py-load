@@ -17,8 +17,7 @@ def test_main():
 
     print("foo")
     for i in SmartBar(range(6), myLoadingBar):
-        sleep(0.5)
+        sleep(0.1) # Here instead you would do stuff
     print("bar")
-    assert myLoadingBar
 
 test_main()
