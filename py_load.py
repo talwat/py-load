@@ -74,7 +74,7 @@ class LoadingBar:
                  percentChar:        str  = "%", 
                  percentLocation:    bool = True,
                  includeNums:        bool = False, 
-                 numsSeperatorChar:  str  = "/", 
+                 numsSeparatorChar:  str  = "/", 
                  numsLocation:       bool = True,
                  barLength:          int  = 50):
         """
@@ -95,7 +95,7 @@ class LoadingBar:
 
         self.progress = 0
         """
-        The progress value of the loading bar. Not a precentage.
+        The progress value of the loading bar. Not a percentage.
         """
 
         self.borderChars = borderChars
@@ -208,7 +208,7 @@ class LoadingBar:
         """
         Default: `True`
 
-        Sets which side the precent and precent character will appear.
+        Sets which side the percent and percent character will appear.
 
         True to have the percent on the right, and false to have it on the left.
 
@@ -242,7 +242,7 @@ class LoadingBar:
         Output: `[##########] 10/10`
         """
         
-        self.numsSeperatorChar = numsSeperatorChar
+        self.numsSeparatorChar = numsSeparatorChar
         """
         Default: `"/"`
 
@@ -255,7 +255,7 @@ class LoadingBar:
         ```
         ...
         myLoadingBar.includeNums = True
-        myLoadingBar.numsSeperatorChar = "#"
+        myLoadingBar.numsSeparatorChar = "#"
         myLoadingBar.display()
         ```
         Output: `[##########] 10#10`
@@ -265,7 +265,7 @@ class LoadingBar:
         """
         Default: `True`
 
-        Sets which side the precent and precent character will appear.
+        Sets which side the percent and percent character will appear.
 
         True to have the percent on the right, and false to have it on the left.
 
@@ -340,7 +340,7 @@ class LoadingBar:
                 toPrint = f"{PERCENT}{self.percentChar} {toPrint}"
         
         if self.includeNums:
-            NUMS = str(self.progress) + self.numsSeperatorChar + str(self.total)
+            NUMS = str(self.progress) + self.numsSeparatorChar + str(self.total)
             if self.numsLocation:
                 toPrint = f"{toPrint} {NUMS}"
             else:
