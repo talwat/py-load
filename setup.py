@@ -7,8 +7,8 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='py-load-lib',
-    description="A super simple and easy to use loading bar module for python.",
-    version='0.4.3',
+    description="A super simple, compact, and easy to use loading bar module for python with no dependencies.",
+    version='0.5',
     license='MIT',
     author="Talwat",
     author_email='talwat321@gmail.com',

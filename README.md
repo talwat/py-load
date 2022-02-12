@@ -5,7 +5,7 @@
     Py-Load
 </h1>
 <h2 align="center">
-    A super simple and easy to use loading bar module for python.
+    A super simple, compact, and easy to use loading bar module for python with no dependencies.
 </h2>
 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/context:python)
@@ -17,6 +17,18 @@
 [![Commits](https://img.shields.io/github/commit-activity/m/talwat/py-load)](https://img.shields.io/github/commit-activity/m/talwat/py-load)
 [![Last Commit](https://img.shields.io/github/last-commit/talwat/py-load)](https://img.shields.io/github/last-commit/talwat/py-load)
 [![Stars](https://img.shields.io/github/stars/talwat/py-load)](https://img.shields.io/github/stars/talwat/py-load)
+
+## Quick Start
+
+You can super quickly make a loading bar by using Smartbars like so:
+
+```python
+from py_load import *
+
+for i in Smartbar(range(1000)):
+    # do stuff
+print("Done!")
+```
 
 ## Info
 
