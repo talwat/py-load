@@ -100,7 +100,7 @@ class LoadingBar:
 
         self.borderChars = borderChars
         """
-        Default: "[", "]"
+        Default: `"[", "]"`
 
         A list that should have two values, the opening border character and the closing border character.
 
@@ -117,21 +117,21 @@ class LoadingBar:
 
         self.progressChar = progressChar
         """
-        Default: "#"
+        Default: `"#"`
 
         The progress character / the fill character.
         """
 
         self.emptyChar = emptyChar
         """
-        Default: " " (space)
+        Default: `" "` (space)
 
         The empty character
         """
 
         self.borderCharsColors = borderCharsColors
         """
-        Default: [Colors.END]
+        Default: `[Colors.END]`
 
         An array of the colors of the border characters.
 
@@ -144,7 +144,7 @@ class LoadingBar:
 
         self.progressCharColors = progressCharColors
         """
-        Default: [Colors.END]
+        Default: `[Colors.END]`
 
         An array of the colors of the progress character.
 
@@ -157,7 +157,7 @@ class LoadingBar:
 
         self.emptyCharColors = emptyCharColors
         """
-        Default: [Colors.END]
+        Default: `[Colors.END]`
 
         An array of the colors of the empty character.
 
@@ -171,7 +171,7 @@ class LoadingBar:
         self.includePercent = includePercent 
         
         """
-        Default: False
+        Default: `False`
 
         Decides whether the loading bar will be displayed with a percent on one of the sides.
 
@@ -187,7 +187,7 @@ class LoadingBar:
 
         self.percentChar = percentChar
         """
-        Default: "%"
+        Default: `"%"`
 
         The character next to the percentage.
 
@@ -206,16 +206,19 @@ class LoadingBar:
 
         self.percentLocation = percentLocation
         """
-        Default: True
+        Default: `True`
 
         Sets which side the precent and precent character will appear.
 
         True to have the percent on the right, and false to have it on the left.
 
+        Does nothing if `includePercent` isn't set to true.
+
         For example:
 
         ```
         ...
+        myLoadingBar.includePercent = True
         myLoadingBar.percentLocation = False
         myLoadingBar.display()
         ```
@@ -224,7 +227,7 @@ class LoadingBar:
 
         self.includeNums = includeNums
         """
-        Default: False
+        Default: `False`
 
         Decides wether the accurate values indicator will be displayed.
 
@@ -241,7 +244,7 @@ class LoadingBar:
         
         self.numsSeperatorChar = numsSeperatorChar
         """
-        Default: "/"
+        Default: `"/"`
 
         The value which separates the accurate values.
         
@@ -260,7 +263,7 @@ class LoadingBar:
 
         self.numsLocation = numsLocation
         """
-        Default: True
+        Default: `True`
 
         Sets which side the precent and precent character will appear.
 
@@ -279,7 +282,7 @@ class LoadingBar:
 
         self.barLength = barLength
         """
-        Default: 50
+        Default: `50`
 
         The length (in characters) of the loading bar.
         """
