@@ -48,7 +48,7 @@ That's why you may see some strange commits every now and then. Sorry!
 
 ## Requirements
 
-Py-load only needs [Python](https://python.org) 3.0 or higher, as it uses Python 3 features.
+Py-load only needs [Python](https://python.org) 3.6 or higher, as it uses Python 3 features.
 
 ### Tested Python Versions
 

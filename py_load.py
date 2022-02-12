@@ -216,31 +216,65 @@ class LoadingBar:
 
         ```
         ...
-        myLoadingBar.includePercent = True
+        myLoadingBar.percentLocation = False
         myLoadingBar.display()
         ```
-        Output: `[##########] 100%`
+        Output: `100% [##########]`
         """
 
         self.includeNums = includeNums
         """
-        EXPERIMENTAL
-
         Default: False
+
+        Decides wether the accurate values indicator will be displayed.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.total = 10
+        myLoadingBar.includeNums = True
+        myLoadingBar.display()
+        ```
+        Output: `[##########] 10/10`
         """
         
         self.numsSeperatorChar = numsSeperatorChar
         """
-        EXPERIMENTAL
-
         Default: "/"
+
+        The value which separates the accurate values.
+        
+        Does nothing if `includeNums` isn't set to True.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.includeNums = True
+        myLoadingBar.numsSeperatorChar = "#"
+        myLoadingBar.display()
+        ```
+        Output: `[##########] 10#10`
         """
 
         self.numsLocation = numsLocation
         """
-        EXPERIMENTAL
-
         Default: True
+
+        Sets which side the precent and precent character will appear.
+
+        True to have the percent on the right, and false to have it on the left.
+
+        For example:
+
+        ```
+        ...
+        myLoadingBar.includeNums = True
+        myLoadingBar.numsLocation = False
+        myLoadingBar.display()
+        ```
+        Output: `10/10 [##########]`
         """
 
         self.barLength = barLength
@@ -255,10 +289,6 @@ class LoadingBar:
         Display the Loading Bar.
 
         Disable `autoPrint` to have the method only return the string instead of printing it using the `print()` method.
-
-        Enable `includePercent` to enable displaying the percent with the loading bar.
-
-        Make `percentLocation` true to have the percent on the right, and false to have it on the left.
 
         Make sure to use the `print()` function right after calling this to reposition the cursor and avoid some issues.
         """
