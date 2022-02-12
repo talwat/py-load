@@ -19,6 +19,19 @@
 
 ## Info
 
+### Other Loading Bars
+
+Py-load isn't the best option for style or for features. Py-load is meant to be simple, not flashy.
+
+It's also just one dude working on it, so it's harder to maintain.
+
+If you want a more complex *Codebase Wise* but well documented and fleshed out use [tqdm](https://github.com/tqdm/tqdm).
+
+If you want something that looks absolutely awesome, use [alive-progress](https://github.com/rsalmei/alive-progress)
+*Seriously their bars look really cool!*
+
+### Py-load
+
 Py-load is a simple python package that allows you to very easily add loading bars to your CLI app.
 
 Py-load is very lightweight, and requires no other dependencies, and is also fairly customizable.
