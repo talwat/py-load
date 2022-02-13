@@ -10,12 +10,12 @@
 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/context:python)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/talwat/py-load.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/talwat/py-load/alerts/)
-[![Build](https://img.shields.io/github/workflow/status/talwat/py-load/Python%20application)](https://img.shields.io/github/workflow/status/talwat/py-load/Python%20application)
-[![License](https://img.shields.io/github/license/talwat/py-load)](https://img.shields.io/github/license/talwat/py-load)
+[![Build](https://img.shields.io/github/workflow/status/talwat/py-load/Python%20application)](https://github.com/talwat/py-load/actions/workflows/python-app.yml)
+[![License](https://img.shields.io/github/license/talwat/py-load)](https://github.com/talwat/py-load/blob/main/LICENSE)
 [![Code Size](https://img.shields.io/github/languages/code-size/talwat/py-load)](https://img.shields.io/github/languages/code-size/talwat/py-load)
-[![PyPi Version](https://img.shields.io/pypi/v/py-load-lib)](https://img.shields.io/pypi/v/py-load-lib)
-[![Commits](https://img.shields.io/github/commit-activity/m/talwat/py-load)](https://img.shields.io/github/commit-activity/m/talwat/py-load)
-[![Last Commit](https://img.shields.io/github/last-commit/talwat/py-load)](https://img.shields.io/github/last-commit/talwat/py-load)
+[![PyPi Version](https://img.shields.io/pypi/v/py-load-lib)](https://pypi.org/project/py-load-lib)
+[![Commits](https://img.shields.io/github/commit-activity/m/talwat/py-load)](https://github.com/talwat/py-load/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/talwat/py-load)](https://github.com/talwat/py-load/commits/main)
 [![Stars](https://img.shields.io/github/stars/talwat/py-load)](https://img.shields.io/github/stars/talwat/py-load)
 
 ## Quick Start
@@ -80,7 +80,7 @@ This will give you the newest features, but it may be unstable.
 
 You can also use pip to install it by doing `pip install py-load-lib`
 
-This will usually be fairly stable and robust, however it is updated quite slowly.
+This will usually be fairly stable and robust, however it is updated a little slower.
 
 ## Usage
 
