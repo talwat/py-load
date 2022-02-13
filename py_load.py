@@ -62,21 +62,23 @@ class LoadingBar:
         BEIGEBG2      = '\33[106m'
         WHITEBG2      = '\33[107m'
 
-    def __init__(self, 
-                 total:              int, 
-                 borderChars:        list = ["[", "]"], 
-                 progressChar:       str  = "#", 
-                 emptyChar:          str  = " ", 
-                 borderCharsColors:  list = [Colors.END], 
-                 progressCharColors: list = [Colors.END], 
-                 emptyCharColors:    list = [Colors.END],
-                 includePercent:     bool = False, 
-                 percentChar:        str  = "%", 
-                 percentLocation:    bool = True,
-                 includeNums:        bool = False, 
-                 numsSeparatorChar:  str  = "/", 
-                 numsLocation:       bool = True,
-                 barLength:          int  = 50):
+    def __init__(
+            self, 
+            total:              int, 
+            borderChars:        list = ["[", "]"], 
+            progressChar:       str  = "#", 
+            emptyChar:          str  = " ", 
+            borderCharsColors:  list = [Colors.END], 
+            progressCharColors: list = [Colors.END], 
+            emptyCharColors:    list = [Colors.END],
+            includePercent:     bool = False, 
+            percentChar:        str  = "%", 
+            percentLocation:    bool = True,
+            includeNums:        bool = False, 
+            numsSeparatorChar:  str  = "/", 
+            numsLocation:       bool = True,
+            barLength:          int  = 50
+        ):
         """
         Initialize the Loading Bar.
 
